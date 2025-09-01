@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-    <h3>my page</h3>
-    
-</body>
-</html>
+<html>
+  <head>
+    <title>Google Map JS API</title>
+    <meta charset="utf-8">
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+    <!-- Google Maps JS API (API 키 필요) -->
+    <script async
+      src="
+https://maps.googleapis.com/maps/api/js?key=AIzaSyCAxj9lEqeemibNadMWYdmb_WlTY2ej63U&callback=initMap
+">
+    </script>
+    <script>
+      function initMap() {
+        const location = { lat: 37.5665, lng: 126.9780 }; // 서울 좌표
+        const map = new 
+google.maps.Map
+(document.getElementById("map"), {
+          zoom: 14,
+          center: location,
+        });
+        new google.maps.Marker({
+          position: location,
+          map: map,
+          title: "서울시청",
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h2>서울시청 위치</h2>
+    <div id="map"></div>
+  </body>
+</html> 
